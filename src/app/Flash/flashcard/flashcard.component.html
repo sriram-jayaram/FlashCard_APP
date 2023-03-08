@@ -1,0 +1,30 @@
+<input [(ngModel)]="this.count" name="count" hidden>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Line Number</mat-label>
+      <input matInput [(ngModel)]="flashcard.lineno" name="lineno" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width txtar">
+        <mat-label >Kanji</mat-label>
+      <textarea matInput style="resize:both"  [(ngModel)]="flashcard.kanji" name="kanji" readonly></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width txtar">
+      <mat-slide-toggle (change)="furcha($event)" [checked]="true">
+        <mat-label>Furigana</mat-label>
+      </mat-slide-toggle>
+        <textarea matInput style="resize:both" [(ngModel)]="flashcard.Read_Method" name="Read_Method" readonly></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width txtar">
+        <mat-slide-toggle (change)="mencha($event)" [checked]="true">
+        <mat-label>Meaning</mat-label>
+      </mat-slide-toggle>
+        <textarea matInput style="resize:both" [(ngModel)]="flashcard.Meaning" name="Meaning" readonly></textarea>
+      </mat-form-field>
+  </form>
+  <form class="butcls">
+    <button mat-raised-button color="accent" (click)="next()">Next</button>
+  </form>
+  <form class="butcls">
+    <button mat-raised-button color="warn" (click)="random()">Random</button>
+  </form>
